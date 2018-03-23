@@ -29,21 +29,17 @@ your project folder and try to think of a more permanent location beforehand (AK
 ### Photos
 If images DON'T need editing* batch resize so they all have a width of 600px. 
 1. FIRST, create a copy of the preprocessed folder. Remove the 'preprocessed bit'. 
-2. In terminal type `for %%a in ("*.jpg") do ffmpeg -i vf scale=320:-1 %%a.png`
+2. In terminal type `for %%a in ("*.jpg") do ffmpeg -i vf scale=320:-1 %%a.png` (not working, retry and fix!)
 
 *If the images do need editing, use Lightroom to edit and output the files under a new folder and name (like the above, YYYYMMDD-PROJECTNAME, except in this case you don't create a copy beforehand, but it's created on the export). 
 
 ### Gifs
-https://gfycat.com/gifbrewery
-If videos DON'T need cropping (ffmpeg): 
+- **GifBrewery** , for detailed edits: https://gfycat.com/gifbrewery
+- **ffmpeg** If videos DON'T need cropping: 
 (commands shared by Richard Lapham)
-
-
-
-If videos need cropping, crop in iMovie (fastest way)
-- Separate audio
-- Crop
-- Modify speed
+- First convert video to frames: `ffmpeg -i hello.mp4 -r 3 video_frame_%d.jpeg`
+- Convert said frames to a gif: `ffmpeg -f image2 -i video_frame_%d.jpeg hello.gif`
+- Resize (here the width is of 360) `ffmpeg -i hello_again.gif -vf scale=360:-1 hello_again.gif`
 
 
 ## Text 
