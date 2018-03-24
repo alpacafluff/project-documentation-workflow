@@ -27,9 +27,9 @@ your project folder and try to think of a more permanent location beforehand (AK
 	- Press Enter.
 
 ### Photos
-If images DON'T need editing* batch resize so they all have a width of 600px. 
-1. FIRST, create a copy of the preprocessed folder. Remove the 'preprocessed bit'. 
-2. In terminal type `for %%a in ("*.jpg") do ffmpeg -i vf scale=320:-1 %%a.png` (not working, retry and fix!)
+If images DON'T need editing* batch resize so they all have a width of 600px, use the sips (scriptable image processing system.) utility in Terminal 
+1. FIRST, create a copy of the preprocessed folder. Remove the 'preprocessed' bit in both folder an images 
+2. In terminal type `sips --resampleWidth 800 *.JPG` (this will still not have a standard width, landscape images will be 800x600 and portrait images will be 600x800, so an additional step must be done in order to have them have have the same width (until I figure out a way to automate this, separate the landscape ones in another folder and run `sips --resampleWidth 600 *.JPG` on them, that will leave them at 66x450.
 
 *If the images do need editing, use Lightroom to edit and output the files under a new folder and name (like the above, YYYYMMDD-PROJECTNAME, except in this case you don't create a copy beforehand, but it's created on the export). 
 
