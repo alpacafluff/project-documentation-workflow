@@ -23,7 +23,7 @@ your project folder and try to think of a more permanent location beforehand (AK
 	- Select "Format" from first drop down menu 
 	- Select "Name and index" from the second drop down menu ("Name Format")
 	- Select "After name" from the third drop down menu ("Location")
-	- Enter "2018-lunarlander-preprocessed_" into the text box (without the quotation marks) and make sure the numbers start in 1
+	- Enter "20180122-lunarlander-preprocessed_" into the text box (without the quotation marks) and make sure the numbers start in 1
 	- Press Enter.
 
 ### Photos
@@ -37,9 +37,10 @@ If images DON'T need editing* batch resize so they all have a width of 600px, us
 - **GifBrewery** , for detailed edits: https://gfycat.com/gifbrewery
 - **ffmpeg** If videos DON'T need cropping: 
 (commands shared by Richard Lapham)
-- First convert video to frames: `ffmpeg -i hello.mp4 -r 3 video_frame_%d.jpeg`
-- Convert said frames to a gif: `ffmpeg -f image2 -i video_frame_%d.jpeg hello.gif`
-- Resize (here the width is of 360) `ffmpeg -i hello_again.gif -vf scale=360:-1 hello_again.gif`
+- First convert video to frames: `ffmpeg -i 20180122-lunarlander_1.mp4 -r 3 video_frame_%d.jpeg`
+- Convert said frames to a gif: `ffmpeg -f image2 -i video_frame_%d.jpeg 20180122-lunarlander_1.gif`
+- Resize (here the width is of 600) `ffmpeg -i 20180122-lunarlander_1 -vf scale=600:-1 20180122-lunarlander_1.gif`
+- Remove the image frames from Finder (unelegant solution, will look for a terminal-based one)
 
 
 ## Text 
